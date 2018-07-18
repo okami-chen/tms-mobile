@@ -2,7 +2,7 @@
     "name": "okami-chen/tms-mobile",
     "type": "library",
     "keywords": ["laravel","php","tms"],
-    "description": "yaml config",
+    "description": "tms-mobile module",
     "homepage": "https://github.com/okami-chen/tms-mobile",
     "license": "MIT",
     "authors": [
