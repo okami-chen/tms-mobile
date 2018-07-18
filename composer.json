@@ -1,0 +1,29 @@
+{
+    "name": "okami-chen/tms-mobile",
+    "type": "library",
+    "keywords": ["laravel","php"],
+    "description": "yaml config",
+    "homepage": "https://github.com/okami-chen/tms-mobile",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OkamiChen",
+            "email": "x25125x@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OkamiChen\\TmsMobile\\":"src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OkamiChen\\TmsMobile\\MobileServiceProvider"
+            ]
+        }
+    }
+}
