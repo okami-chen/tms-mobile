@@ -75,7 +75,7 @@ class MobileController extends Controller
             $grid->id('编号')->sortable();
             $grid->column('name', '姓名');
             $grid->column('mobile', '手机');
-            $grid->column('provide','运营商');
+            $grid->column('provider','运营商');
             $grid->column('monthly', '月租');
             $grid->column('remark','备注');
             $grid->column('created_at', '创建时间');
