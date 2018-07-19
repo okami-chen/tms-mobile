@@ -26,7 +26,7 @@ class SearchController extends Controller {
         $q = request('q');
         $rows   = Mobile::where('mobile', 'like', "%$q%")
                 ->paginate();
-        logger($q);
+
         if(count($rows)){
             $items   = $rows->items();
         

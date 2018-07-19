@@ -108,4 +108,40 @@ class MobileController extends Controller
             $form->display('updated_at', '更新时间');
         });
     }
+    
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $obj = $this->form()->model()->find($id);
+        
+        if(count($obj->items)){
+            return response()->json([
+                'status'  => false,
+                'message' => '请先解除关联',
+            ]);
+        }
+        
+        return response()->json([
+            'status'  => false,
+            'message' => '禁止删除',
+        ]);
+        
+        if ($this->form()->destroy($id)) {
+            return response()->json([
+                'status'  => true,
+                'message' => trans('admin.delete_succeeded'),
+            ]);
+        } else {
+            return response()->json([
+                'status'  => false,
+                'message' => trans('admin.delete_failed'),
+            ]);
+        }
+    }
 }
