@@ -9,6 +9,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 use OkamiChen\TmsMobile\Entity\Mobile;
+use Encore\Admin\Grid\Filter;
 
 class MobileController extends Controller
 {
@@ -73,11 +74,19 @@ class MobileController extends Controller
         return Admin::grid(Mobile::class, function (Grid $grid) {
 
             $grid->id('编号')->sortable();
-            $grid->column('name', '姓名');
-            $grid->column('mobile', '手机');
-            $grid->column('provider','运营商');
-            $grid->column('remark','备注');
+            $grid->column('name', '姓名')->sortable();
+            $grid->column('mobile', '手机')->sortable();
+            $grid->column('provider','运营商')->sortable();
+            $grid->column('remark','备注')->sortable();
             $grid->column('created_at', '创建时间');
+            
+            $grid->filter(function(Filter $filter){
+                $filter->disableIdFilter();
+                $filter->like('name', '姓名');
+                $filter->equal('mobile', '手机');
+            });
+            
+            $grid->paginate(50);
         });
     }
 
