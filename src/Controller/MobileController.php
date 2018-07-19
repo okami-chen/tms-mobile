@@ -93,9 +93,8 @@ class MobileController extends Controller
             $form->text('name','姓名');
             $form->text('mobile', '手机号');
             $form->text('provider','服务商');
-            $form->text('monthly','月租');
-            $form->text('remark','备注');
             $form->text('flag','标志');
+            $form->text('remark','备注');
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
         });
