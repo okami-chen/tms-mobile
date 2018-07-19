@@ -49,6 +49,7 @@ class MobileServiceProvider extends ServiceProvider
         ];
 
         Route::group($attributes, function (Router $router) {
+            $router->any('/service/mobile/search', 'SearchController@mobile')->name('tms.service.mobile.search');
             $router->resource('mobile', 'MobileController',['as'=>'tms']);
         });
     }
