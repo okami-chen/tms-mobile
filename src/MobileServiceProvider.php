@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Route;
 class MobileServiceProvider extends ServiceProvider
 {
     /**
+     * @var array
+     */
+    protected $commands = [
+        \OkamiChen\TmsMobile\Console\Command\ImportCommand::class,
+    ];
+    /**
      * Bootstrap services.
      *
      * @return void
@@ -31,7 +37,7 @@ class MobileServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->commands($this->commands);
     }
     
     protected function registerRoute(){
