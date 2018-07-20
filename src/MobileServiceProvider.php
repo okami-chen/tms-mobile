@@ -12,7 +12,7 @@ class MobileServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        \OkamiChen\TmsMobile\Console\Command\ImportCommand::class,
+        __NAMESPACE__.'\Console\Command\ImportCommand',
     ];
     /**
      * Bootstrap services.
@@ -44,7 +44,7 @@ class MobileServiceProvider extends ServiceProvider
         
         $attributes = [
             'prefix'     => config('admin.route.prefix'),
-            'namespace'  => 'OkamiChen\TmsMobile\Controller',
+            'namespace'  => __NAMESPACE__.'\Controller',
             'middleware' => config('admin.route.middleware'),
         ];
 
