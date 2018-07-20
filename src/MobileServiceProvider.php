@@ -23,7 +23,7 @@ class MobileServiceProvider extends ServiceProvider
     {
         
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path()], 'tms-mobile-config');
+            //$this->publishes([__DIR__.'/../config' => config_path()], 'tms-mobile-config');
             $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'tms-mobile-migrations');
         }
         
